@@ -1,0 +1,139 @@
+allowFunctionsLog = 1;
+allowFunctionsRecompile = 1;
+respawnOnStart = 0;
+
+class Params
+{
+	class Daytime
+	{
+		title = "Time";
+		texts[] = {"Morning","Day","Evening","Night"};
+		values[] = {4,12,18,0};
+		default = 6;
+		function = "BIS_fnc_paramDaytime";
+	};
+	class Overcast
+	{
+		title = "Weather";
+		texts[] = {"Sunny","Cloudy","Rain","Storm"};
+		values[] = {0,0.2,0.6,1};
+		default = 0;
+		function = "BIS_fnc_paramWeather";
+	};
+	#define DEBUGCONSOLE_DEFAULT 0
+	#include "\a3\functions_f\Params\paramDebugConsole.hpp"
+};
+
+class CfgFunctions
+{
+	class AAS
+	{
+		class generation
+		{
+			class ambush {};
+			class civilians {};
+			class removeMortarAmmo {};
+			class friendlyFire {};
+		};
+		class presentation
+		{
+			class militaryDate {};
+			class navigateBoat {ext = ".fsm";};
+			class briefing {};
+		};
+		class boat
+		{
+			class radio {};
+			class fieldrepair {};
+			class fieldtreatment {};
+			class teleport {};
+		};
+		class misc
+		{
+			class greet {};
+		};
+	};
+};
+
+class CfgRadio
+{
+	sounds[] = {};
+	#include "cfg\cfgRadio.inc"
+};
+
+class CfgDebriefing
+{  
+	class End_1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "You have successfully delivered the supplies to the frontline. Well done!";
+		pictureBackground = "";
+		picture = "vn_flag_USA";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+
+	class End_4of4
+	{
+		title = "Mission Completed";
+		subtitle = "4 of 4 groups neutralized";
+		description = "You have successfully delivered the supplies to the frontline and cleared the supply line of all enemy presence. Very well done!";
+		pictureBackground = "";
+		picture = "vn_flag_USA";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+	class End_3of4
+	{
+		title = "Mission Completed";
+		subtitle = "3 of 4 groups neutralized";
+		description = "You have successfully delivered the supplies to the frontline and cleared the supply line of nearly all enemy presence. Well done!";
+		pictureBackground = "";
+		picture = "vn_flag_USA";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+	class End_2of4
+	{
+		title = "Mission Completed";
+		subtitle = "2 of 4 groups neutralized";
+		description = "You have successfully delivered the supplies to the frontline and cleared the supply line of half the enemy presence. Good Job.";
+		pictureBackground = "";
+		picture = "vn_flag_USA";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+	class End_1of4
+	{
+		title = "Mission Completed";
+		subtitle = "1 of 4 groups neutralized";
+		description = "You have successfully delivered the supplies to the frontline and weakened the enemies presence slightly.";
+		pictureBackground = "";
+		picture = "vn_flag_USA";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+	class End_0of4
+	{
+		title = "Mission Completed";
+		subtitle = "0 of 4 groups neutralized";
+		description = "You have successfully delivered the supplies to the frontline. Main objective achieved. The enemy still harasses the supply line.";
+		pictureBackground = "";
+		picture = "vn_flag_USA";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+	class End_boatDead
+	{
+		title = "Mission Failed";
+		subtitle = "Boat and supplies destroyed";
+		description = "The boat with the supplies has been destroyed. Without them the attack further up the river is delayed.";
+		pictureBackground = "";
+		picture = "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+	class End_friendlyFire
+	{
+		title = "Mission Failed";
+		subtitle = "Friendly fire will not be tolerated!";
+		description = "You killed a fellow soldier! Your actions will be brought before court and you will face the consequences of your action.";
+		pictureBackground = "";
+		picture = "\a3\ui_f\data\IGUI\Cfg\Actions\Obsolete\ui_action_cancel_ca.paa";
+		pictureColor[] = { 1.0, 1.0, 1.0, 1 };
+	};
+};

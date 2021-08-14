@@ -1,0 +1,469 @@
+/*%FSM<COMPILE "D:\Programme HDD\Steam HDD\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, MissionFlow_BoatPatrol">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start",0,250,-75.000000,-175.000000,25.000000,-125.000000,0.000000,"Start"};
+item1[] = {"enemy_groups_exi",4,218,-75.000000,-50.000000,25.000000,0.000000,0.000000,"enemy groups" \n "exist"};
+item2[] = {"define_enemy_gro",2,250,-75.000000,75.000000,25.000000,125.000000,0.000000,"define enemy" \n "groups"};
+item3[] = {"everyone_in_boat",4,218,-75.000000,200.000000,25.000000,250.000000,0.000000,"everyone in boat"};
+item4[] = {"__",2,250,-75.000000,325.000000,25.000000,375.000000,0.000000,"/"};
+item5[] = {"Patrol_End__reac",4,218,-75.000000,450.000000,25.000000,500.000000,0.000000,"Patrol End" \n " reached"};
+item6[] = {"succeed_Patrol_T",2,4346,-75.000000,575.000000,25.000000,625.000000,0.000000,"succeed Patrol" \n "Task"};
+item7[] = {"Supplies_deliver",4,218,-75.000000,700.000000,25.000000,750.000000,0.000000,"Supplies" \n "delivered"};
+item8[] = {"SUCCESS_4_4",1,250,-375.000000,1025.000000,-275.000000,1075.000000,0.000000,"SUCCESS" \n "4/4"};
+item9[] = {"complete__supply",2,250,-75.000000,800.000000,25.000000,850.000000,0.000000,"complete " \n "supply task"};
+item10[] = {"___4_3",4,218,-375.000000,925.000000,-275.000000,975.000000,0.000000,"4/4"};
+item11[] = {"___4",4,218,-225.000000,925.000000,-125.000000,975.000000,0.000000,"3/4"};
+item12[] = {"___4_1",4,218,75.000000,925.000000,175.000000,975.000000,0.000000,"1/4"};
+item13[] = {"___4_2",4,218,225.000000,925.000000,325.000000,975.000000,0.000000,"0/4"};
+item14[] = {"___4_4",4,218,-75.000000,925.000000,25.000000,975.000000,0.000000,"2/4"};
+item15[] = {"",7,210,271.000000,821.000000,279.000000,829.000000,0.000000,""};
+item16[] = {"",7,210,-179.000000,821.000000,-171.000000,828.999939,0.000000,""};
+item17[] = {"",7,210,121.000000,821.000000,129.000000,828.999939,0.000000,""};
+item18[] = {"",7,210,-329.000000,821.000061,-321.000000,829.000000,0.000000,""};
+item19[] = {"SUCCESS_3_4",1,250,-225.000000,1025.000000,-125.000000,1075.000000,0.000000,"SUCCESS" \n "3/4"};
+item20[] = {"SUCCESS_2_4_",1,250,-75.000000,1025.000000,25.000000,1075.000000,0.000000,"SUCCESS" \n "2/4" \n ""};
+item21[] = {"SUCCESS_1_4",1,250,75.000000,1025.000000,175.000000,1075.000000,0.000000,"SUCCESS" \n "1/4"};
+item22[] = {"SUCCESS_0_4",1,250,225.000000,1025.000000,325.000000,1075.000000,0.000000,"SUCCESS" \n "0/4"};
+item23[] = {"",7,210,171.000000,95.999985,179.000000,104.000023,0.000000,""};
+item24[] = {"boat_dead",4,218,125.000000,575.000000,225.000000,625.000000,0.000000,"boat dead"};
+item25[] = {"",7,210,171.000000,346.000000,179.000000,354.000000,0.000000,""};
+item26[] = {"fail",1,250,350.000000,575.000000,450.000000,625.000000,0.000000,"fail"};
+item27[] = {"is_not_server",4,218,150.000000,-175.000000,250.000000,-125.000000,0.000000,"is not" \n "server"};
+item28[] = {"terminate",1,250,350.000000,-175.000000,450.000000,-125.000000,0.000000,"terminate"};
+item29[] = {"player_killed_fr",4,218,-300.000000,575.000000,-200.000000,625.000000,0.000000,"player killed" \n "friendly"};
+item30[] = {"",7,210,-254.000000,96.000000,-246.000000,104.000000,0.000000,""};
+item31[] = {"",7,210,-254.000000,346.000000,-246.000000,354.000000,0.000000,""};
+item32[] = {"fail_friendly_fi",1,250,-525.000000,575.000000,-425.000000,625.000000,0.000000,"fail" \n "friendly fire"};
+link0[] = {0,1};
+link1[] = {0,27};
+link2[] = {1,2};
+link3[] = {2,3};
+link4[] = {2,23};
+link5[] = {2,30};
+link6[] = {3,4};
+link7[] = {4,5};
+link8[] = {4,25};
+link9[] = {4,31};
+link10[] = {5,6};
+link11[] = {6,7};
+link12[] = {6,24};
+link13[] = {6,29};
+link14[] = {7,9};
+link15[] = {9,14};
+link16[] = {9,16};
+link17[] = {9,17};
+link18[] = {10,8};
+link19[] = {11,19};
+link20[] = {12,21};
+link21[] = {13,22};
+link22[] = {14,20};
+link23[] = {15,13};
+link24[] = {16,11};
+link25[] = {16,18};
+link26[] = {17,12};
+link27[] = {17,15};
+link28[] = {18,10};
+link29[] = {23,25};
+link30[] = {24,26};
+link31[] = {25,24};
+link32[] = {27,28};
+link33[] = {29,32};
+link34[] = {30,31};
+link35[] = {31,29};
+globals[] = {0.000000,0,0,0,0,640,480,1,50,6316128,1,-781.849915,637.887207,1023.366882,-16.440460,1207,884,1};
+window[] = {2,-1,-1,-1,-1,837,-1842,-402,78,3,1225};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "MissionFlow_BoatPatrol";
+        class States
+        {
+                /*%FSM<STATE "Start">*/
+                class Start
+                {
+                        name = "Start";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"_task_supplies = [" \n
+                         "    west, ""Tsk_Supplies""," \n
+                         "    [""Deliver the supplies on board to the frontline."",""Deliver Supplies"",""marker_7""]," \n
+                         "    markerpos ""marker_7"", ""CREATED"", 1, false, ""rearm""" \n
+                         "] call BIS_fnc_taskCreate;" \n
+                         "" \n
+                         "_task_patrol = [" \n
+                         "    west, ""Tsk_patrol""," \n
+                         "    [""Reach the patrol end."",""End of patrol"",""marker_0""]," \n
+                         "    markerpos ""marker_0"", ""CREATED"", 2, false, ""move""" \n
+                         "] call BIS_fnc_taskCreate;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "is_not_server">*/
+                                class is_not_server
+                                {
+                                        itemno = 27;
+                                        priority = 0.000000;
+                                        to="terminate";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!IsServer"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "enemy_groups_exi">*/
+                                class enemy_groups_exi
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="define_enemy_gro";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNil ""EnemyAmbushGroupArray"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "define_enemy_gro">*/
+                class define_enemy_gro
+                {
+                        name = "define_enemy_gro";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"EnemyAmbushGroupArray params [" \n
+                         "	""_enemyGrp_1""," \n
+                         "	""_enemyGrp_2""," \n
+                         "	""_enemyGrp_3""," \n
+                         "	""_enemyGrp_4""" \n
+                         "];" \n
+                         "_hinderLoop_1 = false;" \n
+                         "_hinderLoop_2 = false;" \n
+                         "_hinderLoop_3 = false;" \n
+                         "_hinderLoop_4 = false;" \n
+                         "" \n
+                         "//_intialStrength_1 = count units _enemyGrp_1; " \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "boat_dead">*/
+                                class boat_dead
+                                {
+                                        itemno = 24;
+                                        priority = 0.000000;
+                                        to="fail";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive b_boat" \n
+                                         "&&" \n
+                                         "[alive player, true] select IsMultiplayer"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "player_killed_fr">*/
+                                class player_killed_fr
+                                {
+                                        itemno = 29;
+                                        priority = 0.000000;
+                                        to="fail_friendly_fi";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"missionNamespace getVariable [""AAS_friendlyFireKill"",false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "everyone_in_boat">*/
+                                class everyone_in_boat
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="__";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"([] call CBA_fnc_players) findIf {!(_x in B_boat)} == -1"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "__">*/
+                class __
+                {
+                        name = "__";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "boat_dead">*/
+                                class boat_dead
+                                {
+                                        itemno = 24;
+                                        priority = 0.000000;
+                                        to="fail";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive b_boat" \n
+                                         "&&" \n
+                                         "[alive player, true] select IsMultiplayer"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "player_killed_fr">*/
+                                class player_killed_fr
+                                {
+                                        itemno = 29;
+                                        priority = 0.000000;
+                                        to="fail_friendly_fi";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"missionNamespace getVariable [""AAS_friendlyFireKill"",false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Patrol_End__reac">*/
+                                class Patrol_End__reac
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="succeed_Patrol_T";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"missionNameSpace getvariable [""AAS_patrolEndReached"",false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "succeed_Patrol_T">*/
+                class succeed_Patrol_T
+                {
+                        name = "succeed_Patrol_T";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"[_task_patrol, 'SUCCEEDED', true] call BIS_fnc_taskSetState;" \n
+                         "" \n
+                         "_ambushGrpSubs = ""Tsk_AmbGrp_Parent"" call BIS_fnc_taskChildren;" \n
+                         "{" \n
+                         "    If !(toupper (_x call BIS_fnc_taskState) isEqualTo ""SUCCEEDED"") then {" \n
+                         "        [_x, 'CANCELED', false] call BIS_fnc_taskSetState;" \n
+                         "    };" \n
+                         "} forEach _ambushGrpSubs;" \n
+                         "If (_ambushGrpSubs findIf {toupper (_x call BIS_fnc_taskState) isEqualTo ""SUCCEEDED""} == -1) then {" \n
+                         "    [""Tsk_AmbGrp_Parent"", 'CANCELED', false] call BIS_fnc_taskSetState;" \n
+                         "} else {" \n
+                         "    [""Tsk_AmbGrp_Parent"", 'SUCCEEDED', false] call BIS_fnc_taskSetState;" \n
+                         "};" \n
+                         "" \n
+                         "[""Tsk_Supplies"", 'ASSIGNED', false] call BIS_fnc_taskSetState;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "boat_dead">*/
+                                class boat_dead
+                                {
+                                        itemno = 24;
+                                        priority = 0.000000;
+                                        to="fail";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive b_boat" \n
+                                         "&&" \n
+                                         "[alive player, true] select IsMultiplayer"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "player_killed_fr">*/
+                                class player_killed_fr
+                                {
+                                        itemno = 29;
+                                        priority = 0.000000;
+                                        to="fail_friendly_fi";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"missionNamespace getVariable [""AAS_friendlyFireKill"",false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Supplies_deliver">*/
+                                class Supplies_deliver
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="complete__supply";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"missionNameSpace getvariable [""AAS_suppliesDelivered"",false]"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "SUCCESS_4_4">*/
+                class SUCCESS_4_4
+                {
+                        name = "SUCCESS_4_4";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"[""end_4of4"", true, true, false] remoteExecCall [""BIS_fnc_endMission"",0];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "complete__supply">*/
+                class complete__supply
+                {
+                        name = "complete__supply";
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/"[_task_supplies, 'SUCCEEDED', true] call BIS_fnc_taskSetState;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "___4">*/
+                                class ___4
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="SUCCESS_3_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"{triggeractivated _x} count AAS_trgArray == 3"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "___4_1">*/
+                                class ___4_1
+                                {
+                                        itemno = 12;
+                                        priority = 0.000000;
+                                        to="SUCCESS_1_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"{triggeractivated _x} count AAS_trgArray == 1"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "___4_2">*/
+                                class ___4_2
+                                {
+                                        itemno = 13;
+                                        priority = 0.000000;
+                                        to="SUCCESS_0_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"{triggeractivated _x} count AAS_trgArray == 0"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "___4_3">*/
+                                class ___4_3
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="SUCCESS_4_4";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"{triggeractivated _x} count AAS_trgArray == 4"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "___4_4">*/
+                                class ___4_4
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="SUCCESS_2_4_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"{triggeractivated _x} count AAS_trgArray == 2"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "SUCCESS_3_4">*/
+                class SUCCESS_3_4
+                {
+                        name = "SUCCESS_3_4";
+                        itemno = 19;
+                        init = /*%FSM<STATEINIT""">*/"[""end_3of4"", true, true, false] remoteExecCall [""BIS_fnc_endMission"",0];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "SUCCESS_2_4_">*/
+                class SUCCESS_2_4_
+                {
+                        name = "SUCCESS_2_4_";
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/"[""end_2of4"", true, true, false] remoteExecCall [""BIS_fnc_endMission"",0];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "SUCCESS_1_4">*/
+                class SUCCESS_1_4
+                {
+                        name = "SUCCESS_1_4";
+                        itemno = 21;
+                        init = /*%FSM<STATEINIT""">*/"[""end_1of4"", true, true, false] remoteExecCall [""BIS_fnc_endMission"",0];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "SUCCESS_0_4">*/
+                class SUCCESS_0_4
+                {
+                        name = "SUCCESS_0_4";
+                        itemno = 22;
+                        init = /*%FSM<STATEINIT""">*/"[""end_0of4"", true, true, false] remoteExecCall [""BIS_fnc_endMission"",0];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "fail">*/
+                class fail
+                {
+                        name = "fail";
+                        itemno = 26;
+                        init = /*%FSM<STATEINIT""">*/"[""end_boatDead"", false, true, true] remoteExecCall [""BIS_fnc_endMission"",0];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "terminate">*/
+                class terminate
+                {
+                        name = "terminate";
+                        itemno = 28;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "fail_friendly_fi">*/
+                class fail_friendly_fi
+                {
+                        name = "fail_friendly_fi";
+                        itemno = 32;
+                        init = /*%FSM<STATEINIT""">*/"[""end_friendlyFire"", false, true, true] remoteExecCall [""BIS_fnc_endMission"",0];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Start";
+        finalStates[] =
+        {
+                "SUCCESS_4_4",
+                "SUCCESS_3_4",
+                "SUCCESS_2_4_",
+                "SUCCESS_1_4",
+                "SUCCESS_0_4",
+                "fail",
+                "terminate",
+                "fail_friendly_fi",
+        };
+};
+/*%FSM</COMPILE>*/
